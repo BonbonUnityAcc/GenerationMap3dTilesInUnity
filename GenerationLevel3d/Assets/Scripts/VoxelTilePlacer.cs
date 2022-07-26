@@ -86,13 +86,12 @@ public class VoxelTilePlacer : MonoBehaviour
     {
         List<VoxelTile> availableTiles = new List<VoxelTile>();
 
-        // 
         foreach(VoxelTile tilePrefab in tilePrafabs)
         {
-            if (CanAppendTile(spawnedTiles[x - 1, y], tilePrefab, Vector3.right) &&
-                CanAppendTile(spawnedTiles[x + 1, y], tilePrefab, Vector3.left) &&
-                CanAppendTile(spawnedTiles[x, y + 1], tilePrefab, Vector3.back) &&
-                CanAppendTile(spawnedTiles[x, y - 1], tilePrefab, Vector3.forward))
+            if (CanAppendTile(spawnedTiles[x - 1, y], tilePrefab, Direction.Right) &&
+                CanAppendTile(spawnedTiles[x + 1, y], tilePrefab, Direction.Left) &&
+                CanAppendTile(spawnedTiles[x, y + 1], tilePrefab, Direction.Back) &&
+                CanAppendTile(spawnedTiles[x, y - 1], tilePrefab, Direction.Forward))
             {
                 availableTiles.Add(tilePrefab);
             }
@@ -124,22 +123,22 @@ public class VoxelTilePlacer : MonoBehaviour
         }
         return availableTiles[availableTiles.Count - 1];
     }
-    private bool CanAppendTile(VoxelTile existingTile, VoxelTile tileToAppend, Vector3 direction)
+    private bool CanAppendTile(VoxelTile existingTile, VoxelTile tileToAppend, Direction direction)
     {
         if (existingTile == null) return true;
-        if (direction == Vector3.left)
+        if (direction == Direction.Left)
         {
             return Enumerable.SequenceEqual(existingTile.ColorRight, tileToAppend.ColorLeft);
         }
-        else if (direction == Vector3.right)
+        else if (direction == Direction.Right)
         {
             return Enumerable.SequenceEqual(existingTile.ColorLeft, tileToAppend.ColorRight);
         }
-        else if (direction == Vector3.back)
+        else if (direction == Direction.Back)
         {
             return Enumerable.SequenceEqual(existingTile.ColorForward, tileToAppend.ColorBack);
         }
-        else if (direction == Vector3.forward)
+        else if (direction == Direction.Forward)
         {
             return Enumerable.SequenceEqual(existingTile.ColorBack, tileToAppend.ColorForward);
         }
