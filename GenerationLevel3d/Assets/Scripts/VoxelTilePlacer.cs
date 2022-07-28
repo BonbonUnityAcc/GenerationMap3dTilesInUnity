@@ -25,7 +25,7 @@ public class VoxelTilePlacer : MonoBehaviour
             {
                 case VoxelTile.RotationType.OnlyRotation:
                     break;
-                case VoxelTile.RotationType.TwoRotation:
+                case VoxelTile.RotationType.TwoRotations:
                     tilePrafabs[i].Weight /= 2;
                     if (tilePrafabs[i].Weight <= 0) tilePrafabs[i].Weight = 1;
 
@@ -33,7 +33,7 @@ public class VoxelTilePlacer : MonoBehaviour
                     clone.Rotate90();
                     tilePrafabs.Add(clone);
                     break;
-                case VoxelTile.RotationType.FourRotation:
+                case VoxelTile.RotationType.FourRotations:
                     tilePrafabs[i].Weight /= 4;
                     if (tilePrafabs[i].Weight <= 0) tilePrafabs[i].Weight = 1;
 
@@ -128,19 +128,19 @@ public class VoxelTilePlacer : MonoBehaviour
         if (existingTile == null) return true;
         if (direction == Direction.Left)
         {
-            return Enumerable.SequenceEqual(existingTile.ColorRight, tileToAppend.ColorLeft);
+            return Enumerable.SequenceEqual(existingTile.ColorsRight, tileToAppend.ColorsLeft);
         }
         else if (direction == Direction.Right)
         {
-            return Enumerable.SequenceEqual(existingTile.ColorLeft, tileToAppend.ColorRight);
+            return Enumerable.SequenceEqual(existingTile.ColorsLeft, tileToAppend.ColorsRight);
         }
         else if (direction == Direction.Back)
         {
-            return Enumerable.SequenceEqual(existingTile.ColorForward, tileToAppend.ColorBack);
+            return Enumerable.SequenceEqual(existingTile.ColorsForward, tileToAppend.ColorsBack);
         }
         else if (direction == Direction.Forward)
         {
-            return Enumerable.SequenceEqual(existingTile.ColorBack, tileToAppend.ColorForward);
+            return Enumerable.SequenceEqual(existingTile.ColorsBack, tileToAppend.ColorsForward);
         }
         else
         {

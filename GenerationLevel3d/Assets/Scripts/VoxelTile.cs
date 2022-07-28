@@ -13,30 +13,30 @@ public class VoxelTile : MonoBehaviour
     public enum RotationType
     {
         OnlyRotation,
-        TwoRotation,
-        FourRotation
+        TwoRotations,
+        FourRotations
     }
 
-    [HideInInspector] public byte[] ColorRight;
-    [HideInInspector] public byte[] ColorLeft;
-    [HideInInspector] public byte[] ColorForward;
-    [HideInInspector] public byte[] ColorBack;
+    [HideInInspector] public byte[] ColorsRight;
+    [HideInInspector] public byte[] ColorsLeft;
+    [HideInInspector] public byte[] ColorsForward;
+    [HideInInspector] public byte[] ColorsBack;
 
     public void CalculateSidesColors()
     {
-        ColorRight = new byte[TilesSizeVoxel * TilesSizeVoxel];
-        ColorLeft = new byte[TilesSizeVoxel * TilesSizeVoxel];
-        ColorForward = new byte[TilesSizeVoxel * TilesSizeVoxel];
-        ColorBack = new byte[TilesSizeVoxel * TilesSizeVoxel];
+        ColorsRight = new byte[TilesSizeVoxel * TilesSizeVoxel];
+        ColorsLeft = new byte[TilesSizeVoxel * TilesSizeVoxel];
+        ColorsForward = new byte[TilesSizeVoxel * TilesSizeVoxel];
+        ColorsBack = new byte[TilesSizeVoxel * TilesSizeVoxel];
 
         for (int y = 0; y < TilesSizeVoxel; y++)
         {
             for (int i = 0; i < TilesSizeVoxel; i++)
             {
-                ColorRight[y * TilesSizeVoxel + i] = GetTileColor(y, i, Direction.Right);
-                ColorLeft[y * TilesSizeVoxel + i] = GetTileColor(y, i, Direction.Left);
-                ColorForward[y * TilesSizeVoxel + i] = GetTileColor(y, i, Direction.Forward);
-                ColorBack[y * TilesSizeVoxel + i] = GetTileColor(y, i, Direction.Back);
+                ColorsRight[y * TilesSizeVoxel + i] = GetTileColor(y, i, Direction.Right);
+                ColorsLeft[y * TilesSizeVoxel + i] = GetTileColor(y, i, Direction.Left);
+                ColorsForward[y * TilesSizeVoxel + i] = GetTileColor(y, i, Direction.Forward);
+                ColorsBack[y * TilesSizeVoxel + i] = GetTileColor(y, i, Direction.Back);
             }
         }
     }
@@ -53,17 +53,17 @@ public class VoxelTile : MonoBehaviour
         {
             for(int offset = 0; offset < TilesSizeVoxel; offset++)
             {
-                colorsRightNew[layer * TilesSizeVoxel + offset] = ColorForward[layer * TilesSizeVoxel + TilesSizeVoxel - offset - 1];
-                colorsForwardNew[layer * TilesSizeVoxel + offset] = ColorLeft[layer * TilesSizeVoxel + offset];
-                colorsLeftNew[layer * TilesSizeVoxel + offset] = ColorBack[layer * TilesSizeVoxel + TilesSizeVoxel - offset - 1];
-                colorsBackNew[layer * TilesSizeVoxel + offset] = ColorRight[layer * TilesSizeVoxel + offset];
+                colorsRightNew[layer * TilesSizeVoxel + offset] = ColorsForward[layer * TilesSizeVoxel + TilesSizeVoxel - offset - 1];
+                colorsForwardNew[layer * TilesSizeVoxel + offset] = ColorsLeft[layer * TilesSizeVoxel + offset];
+                colorsLeftNew[layer * TilesSizeVoxel + offset] = ColorsBack[layer * TilesSizeVoxel + TilesSizeVoxel - offset - 1];
+                colorsBackNew[layer * TilesSizeVoxel + offset] = ColorsRight[layer * TilesSizeVoxel + offset];
             }
         }
 
-        ColorRight = colorsRightNew;
-        ColorLeft = colorsLeftNew ;
-        ColorForward = colorsForwardNew;
-        ColorBack =   colorsBackNew;
+        ColorsRight = colorsRightNew;
+        ColorsLeft = colorsLeftNew ;
+        ColorsForward = colorsForwardNew;
+        ColorsBack =   colorsBackNew;
     }
 
     private byte GetTileColor(int verticaleLayer, int horizontalOffset, Direction direction)
@@ -105,7 +105,7 @@ public class VoxelTile : MonoBehaviour
         }
         rayStart.y = meshCollider.bounds.min.y + half + verticaleLayer * vox;
 
-        //Debug.DrawRay(rayStart, direction * 0.1f, Color.blue, 2);
+        //Debug.DrawRay(rayStart, rayDir, Color.blue, 5);
 
         if (Physics.Raycast(new Ray(rayStart, rayDir), out RaycastHit _hit, VoxelSize))
         {

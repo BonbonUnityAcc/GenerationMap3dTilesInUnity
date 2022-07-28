@@ -222,10 +222,10 @@ MonoBehaviour:
   TilesSizeVoxel: 8
   Weight: 11
   Rotation: 1
-  ColorRight: 
-  ColorLeft: 
-  ColorForward: 
-  ColorBack: 
+  ColorsRight: 
+  ColorsLeft: 
+  ColorsForward: 
+  ColorsBack: 
 --- !u!64 &80945525
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &236782248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
   - {fileID: 528284236}
   - {fileID: 1023385594}
   - {fileID: 1895853818}
-  mapSize: {x: 20, y: 20}
+  mapSize: {x: 10, y: 10}
 --- !u!4 &236782249
 Transform:
   m_ObjectHideFlags: 0
@@ -295,6 +295,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &243612532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243612534}
+  - component: {fileID: 243612533}
+  m_Layer: 0
+  m_Name: GeneratorWfc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &243612533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243612532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347cf9f9b1b6d174bbb5855bece2517e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TilePrefabs:
+  - {fileID: 2012568706}
+  - {fileID: 1177236830}
+  - {fileID: 80945524}
+  - {fileID: 1996396154}
+  - {fileID: 1201437012}
+  - {fileID: 257153288}
+  - {fileID: 1321013818}
+  - {fileID: 293845771}
+  - {fileID: 528284236}
+  - {fileID: 1023385594}
+  - {fileID: 1895853818}
+  MapSize: {x: 10, y: 10}
+--- !u!4 &243612534
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243612532}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &257153285
 PrefabInstance:
@@ -395,10 +451,10 @@ MonoBehaviour:
   TilesSizeVoxel: 8
   Weight: 18
   Rotation: 2
-  ColorRight: 
-  ColorLeft: 
-  ColorForward: 
-  ColorBack: 
+  ColorsRight: 
+  ColorsLeft: 
+  ColorsForward: 
+  ColorsBack: 
 --- !u!64 &257153289
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -510,12 +566,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VoxelSize: 0.1
   TilesSizeVoxel: 8
-  Weight: 15
+  Weight: 5
   Rotation: 2
-  ColorRight: 
-  ColorLeft: 
-  ColorForward: 
-  ColorBack: 
+  ColorsRight: 
+  ColorsLeft: 
+  ColorsForward: 
+  ColorsBack: 
 --- !u!64 &293845772
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -627,12 +683,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VoxelSize: 0.1
   TilesSizeVoxel: 8
-  Weight: 15
+  Weight: 5
   Rotation: 2
-  ColorRight: 
-  ColorLeft: 
-  ColorForward: 
-  ColorBack: 
+  ColorsRight: 
+  ColorsLeft: 
+  ColorsForward: 
+  ColorsBack: 
 --- !u!64 &528284237
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -920,12 +976,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VoxelSize: 0.1
   TilesSizeVoxel: 8
-  Weight: 15
+  Weight: 5
   Rotation: 2
-  ColorRight: 
-  ColorLeft: 
-  ColorForward: 
-  ColorBack: 
+  ColorsRight: 
+  ColorsLeft: 
+  ColorsForward: 
+  ColorsBack: 
 --- !u!64 &1023385595
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1039,10 +1095,10 @@ MonoBehaviour:
   TilesSizeVoxel: 8
   Weight: 55
   Rotation: 0
-  ColorRight: 
-  ColorLeft: 
-  ColorForward: 
-  ColorBack: 
+  ColorsRight: 
+  ColorsLeft: 
+  ColorsForward: 
+  ColorsBack: 
 --- !u!64 &1177236831
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1156,10 +1212,10 @@ MonoBehaviour:
   TilesSizeVoxel: 8
   Weight: 55
   Rotation: 2
-  ColorRight: 
-  ColorLeft: 
-  ColorForward: 
-  ColorBack: 
+  ColorsRight: 
+  ColorsLeft: 
+  ColorsForward: 
+  ColorsBack: 
 --- !u!64 &1201437013
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1273,10 +1329,10 @@ MonoBehaviour:
   TilesSizeVoxel: 8
   Weight: 55
   Rotation: 2
-  ColorRight: 
-  ColorLeft: 
-  ColorForward: 
-  ColorBack: 
+  ColorsRight: 
+  ColorsLeft: 
+  ColorsForward: 
+  ColorsBack: 
 --- !u!64 &1321013819
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1388,12 +1444,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VoxelSize: 0.1
   TilesSizeVoxel: 8
-  Weight: 15
+  Weight: 5
   Rotation: 2
-  ColorRight: 
-  ColorLeft: 
-  ColorForward: 
-  ColorBack: 
+  ColorsRight: 
+  ColorsLeft: 
+  ColorsForward: 
+  ColorsBack: 
 --- !u!64 &1895853819
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1507,10 +1563,10 @@ MonoBehaviour:
   TilesSizeVoxel: 8
   Weight: 11
   Rotation: 1
-  ColorRight: 
-  ColorLeft: 
-  ColorForward: 
-  ColorBack: 
+  ColorsRight: 
+  ColorsLeft: 
+  ColorsForward: 
+  ColorsBack: 
 --- !u!64 &1996396155
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1628,10 +1684,10 @@ MonoBehaviour:
   TilesSizeVoxel: 8
   Weight: 50
   Rotation: 0
-  ColorRight: 
-  ColorLeft: 
-  ColorForward: 
-  ColorBack: 
+  ColorsRight: 
+  ColorsLeft: 
+  ColorsForward: 
+  ColorsBack: 
 --- !u!64 &2012568707
 MeshCollider:
   m_ObjectHideFlags: 0
